@@ -6,7 +6,7 @@
 %define	pdir	Test
 %define	pnam	use-ok
 Summary:	Test::use::ok - Alternative to Test::More::use_ok
-#Summary(pl):	
+Summary(pl):	Test::use::ok - alternatywa dla Test::More::use_ok
 Name:		perl-Test-use-ok
 Version:	0.01
 Release:	1
@@ -43,8 +43,28 @@ With this module, simply change all use_ok in test scripts to use ok,
 and they will be executed at BEGIN time. The explicit space after use
 makes it clear that this is a single compile-time action.
 
-# %description -l pl
-# TODO
+%description -l pl
+Zgodnie z dokumentacj± Test::More, zaleca siê wywo³ywanie use_ok()
+wewn±trz bloku BEGIN, aby funkcje by³y eksportowane w czasie
+kompilacji, a prototypy odpowiednio honorowane.
+
+Czyli zamiast pisania tak:
+
+    use_ok( 'Jakis::Modul' );
+    use_ok( 'Inny::Modul' );
+
+Powinno pisaæ siê tak:
+
+    BEGIN { use_ok( 'Jakis::Modul' ); }
+    BEGIN { use_ok( 'Inny::Modul' ); }
+
+Jednak ludzie czêsto zapominaj± dodaæ BEGIN lub b³êdnie grupuj± use_ok
+z innymi testami w pojedynczym bloku BEGIN, co mo¿e powodowaæ subtelne
+ró¿nice w kolejno¶ci wykonywania.
+
+Przy u¿yciu tego modu³u wystarczy zmieniæ wszystkie use_ok w skryptach
+testowych na use ok, i zostan± one wykonane w czasie BEGIN. Spacja po
+use daje jasno¶æ, ¿e jest to pojedyncza akcja w czasie kompilacji.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
