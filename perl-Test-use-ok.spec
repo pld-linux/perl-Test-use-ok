@@ -9,7 +9,7 @@ Summary:	Test::use::ok - Alternative to Test::More::use_ok
 Summary(pl.UTF-8):	Test::use::ok - alternatywa dla Test::More::use_ok
 Name:		perl-Test-use-ok
 Version:	0.01
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
