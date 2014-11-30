@@ -1,10 +1,10 @@
 #
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define	pdir	Test
 %define	pnam	use-ok
+%include	/usr/lib/rpm/macros.perl
 Summary:	Test::use::ok - Alternative to Test::More::use_ok
 Summary(pl.UTF-8):	Test::use::ok - alternatywa dla Test::More::use_ok
 Name:		perl-Test-use-ok
@@ -14,6 +14,7 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/A/AU/AUDREYT/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	c49b0bbb37a6764b8b96d9fcef954ba2
+URL:		http://search.cpan.org/dist/Test-use-ok/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
