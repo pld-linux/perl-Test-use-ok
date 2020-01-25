@@ -4,7 +4,6 @@
 
 %define	pdir	Test
 %define	pnam	use-ok
-%include	/usr/lib/rpm/macros.perl
 Summary:	Test::use::ok - Alternative to Test::More::use_ok
 Summary(pl.UTF-8):	Test::use::ok - alternatywa dla Test::More::use_ok
 Name:		perl-Test-use-ok
